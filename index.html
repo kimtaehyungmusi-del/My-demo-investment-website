@@ -21,7 +21,7 @@ header {
   font-size: 20px;
 }
 
-/* Banner (ad style) */
+/* Banner */
 .banner {
   background: url('https://picsum.photos/800/300') no-repeat center/cover;
   padding: 60px 20px;
@@ -35,7 +35,7 @@ header {
   border-radius: 8px;
 }
 
-/* Main card */
+/* Card */
 .card {
   background: #1f2937;
   margin: 20px;
@@ -90,22 +90,46 @@ footer {
 </style>
 
 <script>
+let currentLang = "en";
+
 function setLang(lang) {
+  currentLang = lang;
+
   if (lang === "en") {
     document.getElementById("greet").innerText = "Hi Charial";
     document.getElementById("balance").innerText = "$100,000.00";
     document.getElementById("locked").innerText = "Funds locked to: Kim";
     document.getElementById("demo").innerText = "Demo only - No real transactions";
+    document.getElementById("services").innerText = "Services";
+    document.getElementById("sponsored").innerText = "Sponsored";
   } else {
     document.getElementById("greet").innerText = "안녕하세요 Charial";
     document.getElementById("balance").innerText = "₩100,000";
     document.getElementById("locked").innerText = "자금 잠금 대상: Kim";
     document.getElementById("demo").innerText = "데모 전용 - 실제 거래 없음";
+    document.getElementById("services").innerText = "서비스";
+    document.getElementById("sponsored").innerText = "광고";
+  }
+}
+
+function deposit() {
+  if (currentLang === "en") {
+    alert("Awaiting payment");
+  } else {
+    alert("결제 대기 중");
+  }
+}
+
+function withdraw() {
+  if (currentLang === "en") {
+    alert("Invest first");
+  } else {
+    alert("먼저 투자하세요");
   }
 }
 
 function clickFeature(name) {
-  alert(name + " feature coming soon!");
+  alert(name + " coming soon!");
 }
 </script>
 
@@ -117,7 +141,7 @@ function clickFeature(name) {
   HWARANG CAPITAL (화랑 캐피탈)
 </header>
 
-<!-- Banner / Ads style -->
+<!-- Banner -->
 <div class="banner">
   <h2>Invest Smart. Grow Strong.</h2>
 </div>
@@ -128,8 +152,8 @@ function clickFeature(name) {
   <div class="balance" id="balance">$100,000.00</div>
   <div class="locked" id="locked">Funds locked to: Kim</div>
 
-  <button onclick="alert('Demo only')">Deposit</button>
-  <button onclick="alert('Demo only')">Withdraw</button>
+  <button onclick="deposit()">Deposit</button>
+  <button onclick="withdraw()">Withdraw</button>
 </div>
 
 <!-- Language -->
@@ -138,9 +162,9 @@ function clickFeature(name) {
   <button onclick="setLang('kr')">한국어</button>
 </div>
 
-<!-- Features Section -->
+<!-- Services -->
 <div class="section">
-  <h3>Services</h3>
+  <h3 id="services">Services</h3>
 
   <div class="feature" onclick="clickFeature('Investment Plans')">
     Investment Plans
@@ -159,9 +183,9 @@ function clickFeature(name) {
   </div>
 </div>
 
-<!-- Ads / Image Section -->
+<!-- Ads Section -->
 <div class="section">
-  <h3>Sponsored</h3>
+  <h3 id="sponsored">Sponsored</h3>
   <img src="https://picsum.photos/300/150" style="width:100%;border-radius:10px;">
 </div>
 
