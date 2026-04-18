@@ -3,68 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <title>Hwarang Capital</title>
+
 <style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #0a0f1c;
-    color: #fff;
-    margin: 0;
-    padding: 0;
-  }
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0a0f1c;
+  color: white;
+}
 
-  header {
-    background: #111827;
-    padding: 20px;
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
+/* Header */
+header {
+  background: #111827;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
 
-  .container {
-    padding: 30px;
-    text-align: center;
-  }
+/* Banner (ad style) */
+.banner {
+  background: url('https://picsum.photos/800/300') no-repeat center/cover;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-  .card {
-    background: #1f2937;
-    padding: 25px;
-    border-radius: 15px;
-    max-width: 350px;
-    margin: auto;
-    box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  }
+.banner h2 {
+  background: rgba(0,0,0,0.6);
+  display: inline-block;
+  padding: 10px;
+  border-radius: 8px;
+}
 
-  .balance {
-    font-size: 26px;
-    margin: 15px 0;
-    color: #00ffcc;
-  }
+/* Main card */
+.card {
+  background: #1f2937;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+}
 
-  .locked {
-    color: #ff4d4d;
-    font-size: 14px;
-  }
+.balance {
+  font-size: 26px;
+  color: #00ffcc;
+}
 
-  button {
-    margin-top: 10px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #facc15;
-    font-weight: bold;
-  }
+.locked {
+  color: red;
+}
 
-  .lang-switch {
-    margin-top: 20px;
-  }
+/* Buttons */
+button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  background: gold;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-  footer {
-    margin-top: 40px;
-    font-size: 12px;
-    color: #aaa;
-  }
+/* Sections */
+.section {
+  padding: 20px;
+}
+
+.feature {
+  background: #111827;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.feature:hover {
+  background: #1f2937;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+  color: gray;
+}
 </style>
 
 <script>
@@ -73,13 +95,17 @@ function setLang(lang) {
     document.getElementById("greet").innerText = "Hi Charial";
     document.getElementById("balance").innerText = "$100,000.00";
     document.getElementById("locked").innerText = "Funds locked to: Kim";
-    document.getElementById("note").innerText = "Demo interface only. No real financial services.";
+    document.getElementById("demo").innerText = "Demo only - No real transactions";
   } else {
     document.getElementById("greet").innerText = "안녕하세요 Charial";
     document.getElementById("balance").innerText = "₩100,000";
     document.getElementById("locked").innerText = "자금 잠금 대상: Kim";
-    document.getElementById("note").innerText = "이것은 데모 인터페이스입니다. 실제 금융 서비스가 아닙니다.";
+    document.getElementById("demo").innerText = "데모 전용 - 실제 거래 없음";
   }
+}
+
+function clickFeature(name) {
+  alert(name + " feature coming soon!");
 }
 </script>
 
@@ -91,24 +117,57 @@ function setLang(lang) {
   HWARANG CAPITAL (화랑 캐피탈)
 </header>
 
-<div class="container">
-
-  <div class="card">
-    <h2 id="greet">Hi Charial</h2>
-    <div class="balance" id="balance">$100,000.00</div>
-    <div class="locked" id="locked">Funds locked to: Kim</div>
-  </div>
-
-  <div class="lang-switch">
-    <button onclick="setLang('en')">English</button>
-    <button onclick="setLang('kr')">한국어</button>
-  </div>
-
-  <footer id="note">
-    Demo interface only. No real financial services.
-  </footer>
-
+<!-- Banner / Ads style -->
+<div class="banner">
+  <h2>Invest Smart. Grow Strong.</h2>
 </div>
+
+<!-- Account Card -->
+<div class="card">
+  <h2 id="greet">Hi Charial</h2>
+  <div class="balance" id="balance">$100,000.00</div>
+  <div class="locked" id="locked">Funds locked to: Kim</div>
+
+  <button onclick="alert('Demo only')">Deposit</button>
+  <button onclick="alert('Demo only')">Withdraw</button>
+</div>
+
+<!-- Language -->
+<div style="text-align:center;">
+  <button onclick="setLang('en')">English</button>
+  <button onclick="setLang('kr')">한국어</button>
+</div>
+
+<!-- Features Section -->
+<div class="section">
+  <h3>Services</h3>
+
+  <div class="feature" onclick="clickFeature('Investment Plans')">
+    Investment Plans
+  </div>
+
+  <div class="feature" onclick="clickFeature('Loan Services')">
+    Loan Services
+  </div>
+
+  <div class="feature" onclick="clickFeature('Crypto Trading')">
+    Crypto Trading
+  </div>
+
+  <div class="feature" onclick="clickFeature('Savings Account')">
+    Savings Account
+  </div>
+</div>
+
+<!-- Ads / Image Section -->
+<div class="section">
+  <h3>Sponsored</h3>
+  <img src="https://picsum.photos/300/150" style="width:100%;border-radius:10px;">
+</div>
+
+<footer id="demo">
+  Demo only - No real transactions
+</footer>
 
 </body>
 </html>
