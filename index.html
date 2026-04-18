@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Demo Investment Bank</title>
+<style>
+  body {
+    font-family: Arial;
+    background: #0d1b2a;
+    color: white;
+    text-align: center;
+    padding: 40px;
+  }
+  .card {
+    background: #1b263b;
+    padding: 30px;
+    border-radius: 15px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 0 0 10px black;
+  }
+  button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: gold;
+  }
+</style>
+
+<script>
+function setLang(lang) {
+  if (lang === "en") {
+    document.getElementById("greet").innerText = "Hi Charial";
+    document.getElementById("balance").innerText = "Balance: $100,000";
+    document.getElementById("locked").innerText = "Funds locked to: Kim";
+  } else {
+    document.getElementById("greet").innerText = "안녕하세요 Charial";
+    document.getElementById("balance").innerText = "잔액: $100,000";
+    document.getElementById("locked").innerText = "자금 잠금 대상: Kim";
+  }
+}
+</script>
+
+</head>
+<body>
+
+<h1>Demo Investment Bank</h1>
+
+<div class="card">
+  <h2 id="greet">Hi Charial</h2>
+  <p id="balance">Balance: $100,000</p>
+  <p id="locked">Funds locked to: Kim</p>
+</div>
+
+<br>
+
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('kr')">한국어</button>
+
+</body>
+</html>
